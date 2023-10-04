@@ -14,65 +14,44 @@ public class Characteristic {
     private String body;
     private String wheel;
 
-    public Characteristic() {
+    private Characteristic(Builder builder) {
+        this.brand = builder.brand;
+        this.ram = builder.ram;
+        this.wheel = builder.wheel;
     }
-
-    public Characteristic(String brand, String color, String ram, String cpu, String os, String weight, String memory,
-                          String memoryType, String battery, String body, String wheel) {
-        this.brand = brand;
-        this.color = color;
-        this.ram = ram;
-        this.cpu = cpu;
-        this.os = os;
-        this.weight = weight;
-        this.memory = memory;
-        this.memoryType = memoryType;
-        this.battery = battery;
-        this.body = body;
-        this.wheel = wheel;
+    public static Builder builder() {
+        return  new Builder();
     }
+   public static class Builder {
+       private String brand;
+       private String ram;
+       private String wheel;
 
-    public String getBrand() {
-        return brand;
-    }
+       //сетеры
+       public Builder brand(String brand) {
+           this.brand = brand;
+           return this;
+       }
+       public Builder ram(String ram) {
+           this.ram = ram;
+           return this;
+       }
+       public Builder wheel(String wheel) {
+           this.wheel = wheel;
+           return this;
+       }
+       public Characteristic build() {
+           return new Characteristic(this);
+       }
 
-    public String getColor() {
-        return color;
-    }
+   }
 
-    public String getRam() {
-        return ram;
-    }
-
-    public String getCpu() {
-        return cpu;
-    }
-
-    public String getOs() {
-        return os;
-    }
-
-    public String getWeight() {
-        return weight;
-    }
-
-    public String getMemory() {
-        return memory;
-    }
-
-    public String getMemoryType() {
-        return memoryType;
-    }
-
-    public String getBattery() {
-        return battery;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public String getWheel() {
-        return wheel;
+    @Override
+    public String toString() {
+        return "Characteristic{" +
+                "brand='" + brand + '\'' +
+                ", ram='" + ram + '\'' +
+                ", wheel='" + wheel + '\'' +
+                '}';
     }
 }

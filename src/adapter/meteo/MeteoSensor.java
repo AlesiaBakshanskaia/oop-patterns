@@ -2,7 +2,7 @@ package adapter.meteo;
 
 import java.time.LocalDateTime;
 
-interface MeteoSensor {
+public interface MeteoSensor {
     int getId(); // идентификатор датчика
 
     Float getTemperature(); // температура датчика

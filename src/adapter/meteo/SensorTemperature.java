@@ -1,6 +1,6 @@
 package adapter.meteo;
 
-interface SensorTemperature{
+public interface SensorTemperature{
     int identifier(); // идентификатор датчика
     double temperature(); // температура датчика
     int year();			 // Год
